@@ -1,0 +1,24 @@
+{
+    "location": [
+        {
+            "locationName": "belfast"
+            , "latitude": "54.5973"
+            , "longitude": "-5.9301"
+            , "population": "280962"
+   },
+
+        {
+            "locationName": "lisburn"
+            , "latitude": "54.5162"
+            , "longitude": "-6.0580"
+            , "population": "120165"
+   },
+
+        {
+            "locationName": "carrickfergus"
+            , "latitude": "54.7262"
+            , "longitude": "-5.8101"
+            , "population": "39114"
+   }
+]
+}
