@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="description" content="A measure of happiness in the areas below">
+    <h1 align="center">
+      <img src="images/pohmk2.png" alt="logo" />
+    </h1>
+    <h2 align="center"> A measure of happiness in Northern Ireland</h2>
+    <style>
+      header, img {
+        width: 290px;
+        height:160px
+        padding:0;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        padding: 0;
+        margin-bottom: 0;
+        -webkit-text-stroke: 1px black;
+      }
+      h2 {
+        color: #699dd2;
+        font-family: inherit;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 5px;
+        -webkit-text-stroke: 1px black;
+      }
+       #map {
+        height: 100%;
+        border-top-style: solid;
+        border-width: thin;
+      }
+    </style>
+  </head>
+  <body background="images/background.jpg">
+    <div id="map"></div>
+    <script>
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+
+      function initMap() {
+        var belfast = {lat: 54.594522, lng: -5.930754};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: belfast
+        });
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Belfast</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Belfast</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+            'sandstone rock formation in the southern part of the '+
+            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+            'south west of the nearest large town, Alice Springs; 450&#160;km '+
+            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+            'Aboriginal people of the area. It has many springs, waterholes, '+
+            'rock caves and ancient paintings. Uluru is listed as a World '+
+            'Heritage Site.</p>'+
+            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+            '(last visited June 22, 2009).</p>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: belfast,
+          map: map,
+          title: 'Belfast NI'
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzvhpAnquZlsrj4_Z97JJX0l1fVXxodWY
+&callback=initMap">
+    </script>
+  </body>
+</html>
